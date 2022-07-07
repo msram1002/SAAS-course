@@ -1,0 +1,12 @@
+// base styles
+$color-dark: #262626;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-dark;
+}
