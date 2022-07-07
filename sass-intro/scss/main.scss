@@ -1,0 +1,146 @@
+// compiler watches only main scss file
+// although we can include in script
+// "watch": "node-sass -o css scss -w"
+// we need to link it through our index.html file via importing them
+// the _test file is called a partial
+
+@import "test";
+
+body {
+  background-color: white;
+}
+
+// variables
+$color-primary: orange;
+$color-secondary: gray;
+$color-tertiary: royalblue;
+
+// font-sizes
+$font-xl: 3rem;
+$font-lg: 2rem;
+$font-md: 1.5rem;
+$font-base: 1.1rem;
+$font-sm: 0.9rem;
+
+.nav {
+  background-color: lighten($color-primary, 20);
+
+  // Nesting in SASS
+  // Avoid wrtiting many lines of CSS
+  // Easy to use and shortcut to write CSS Rules
+  // ul li {
+  //   list-style: none;
+  // }
+  ul li {
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      font-size: $font-sm;
+
+      // for hover, we need an &
+      &:hover {
+        color: $color-tertiary;
+      }
+    }
+  }
+}
+
+// Mixin
+// Block of code which groups bunch of reusable CSS styles
+
+// @mixin headingStyles($fontSize) {
+//   color: $color-secondary;
+//   text-align: center;
+//   font-size: $fontSize;
+// }
+
+@mixin headingStyles($fontSize: 2.5rem) {
+  color: $color-secondary;
+  text-align: center;
+  font-size: $fontSize;
+}
+
+// for multiple arguments we need ...
+@mixin transitionEffect($param...) {
+  transition: $param;
+}
+
+.banner h1 {
+  // local declaration of $color-secondary
+  $color-secondary: orange;
+  // Make this global overwrite the gray value
+  // $color-secondary: orange !global;
+  // Underscore and Hypen works interchangebly
+  // font-size: $font_xl;
+  // font-size: $font-xl;
+  // color: $color-secondary;
+  // text-align: center;
+  // @include headingStyles;
+  @include headingStyles($font-xl);
+}
+
+.footer h3 {
+  // font-size: $font-md;
+  // color: $color-secondary;
+  // text-align: center;
+  // @include headingStyles($font-md);
+  @include headingStyles;
+  @include transitionEffect(color 0.5s, background-color 1s);
+
+  &:hover {
+    color: $color-tertiary;
+    background-color: $color-primary;
+  }
+}
+
+// Extend
+// Allows one selector to inherit styles from another selector
+// DRY - Dont Repeat Yourself
+
+.contentStyles {
+  color: $color-primary;
+  font-size: $font-lg;
+  background-color: $color-secondary;
+  text-align: center;
+}
+
+.content h2 {
+  @extend .contentStyles;
+}
+
+.footer h2 {
+  @extend .contentStyles;
+}
+
+// Functions
+// run some code over and over again
+// especially useful for larger projects
+
+@function fontSize($size) {
+  @return $size * 2;
+}
+
+// function to lighten the color
+// inbuilt - lighten, darken
+// transparentize - to change opacity
+// mix(blue, green, 20%)
+
+.footer p {
+  font-size: fontSize(0.75rem);
+}
+
+// Placeholder selectors
+// doesnt want to compile few classes
+// use a % before the class name instead of dot
+%bannerPara {
+  color: $color-primary;
+  font-size: $font-sm;
+}
+
+.banner p {
+  @extend %bannerPara;
+}
+
+// Import and Partials
+// Spilt our code and import the styles from the partials
