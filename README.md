@@ -34,7 +34,7 @@ body {
 ``` 
 
 ## Nesting
-When writing HTML you havve probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.
+When writing HTML you have probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.
 
 Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML. Be aware that overly nested rules will result in over-qualified CSS that could prove hard to maintain and is generally considered bad practice.
 
