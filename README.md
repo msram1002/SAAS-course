@@ -10,21 +10,21 @@ Once Sass is installed, you can compile your Sass to CSS using the sass command.
 _Sass has two syntaxes! The SCSS syntax (.scss) is used most commonly. It's a superset of CSS, which means all valid CSS is also valid SCSS. The indented syntax (.sass) is more unusual: it uses indentation rather than curly braces to nest statements, and newlines instead of semicolons to separate them._
 
 ## Variables
-Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you'll want to reuse. Sass uses the $ symbol to make something a variable.
+Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you will want to reuse. Sass uses the $ symbol to make something a variable.
 
-SCSS:
+**SCSS:**
 
 ```
 $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
- 
+
 body {
   font: 100% $font-stack;
   color: $primary-color;
 }
 ``` 
 
-CSS:
+**CSS:**
 
 ``` 
 body {
@@ -38,7 +38,7 @@ When writing HTML you have probably noticed that it has a clear nested and visua
 
 Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML. Be aware that overly nested rules will result in over-qualified CSS that could prove hard to maintain and is generally considered bad practice.
 
-SCSS:
+**SCSS:**
 
 ``` 
 nav {
@@ -58,7 +58,7 @@ nav {
 }
 ``` 
 
-CSS:
+**CSS:**
 
 ``` 
 nav ul {
@@ -79,7 +79,7 @@ nav a {
 ## Mixins
 Some things in CSS are a bit tedious to write, especially with CSS3 and the many vendor prefixes that exist. A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. It helps keep your Sass very DRY.
 
-SCSS:
+**SCSS:**
 
 ``` 
 @mixin theme($theme: DarkGray) {
@@ -99,7 +99,7 @@ SCSS:
 }
 ``` 
 
-CSS:
+**CSS:**
 
 ``` 
 .info {
@@ -124,7 +124,7 @@ CSS:
 ## Extend/Inheritance
 Using @extend lets you share a set of CSS properties from one selector to another. In our example we're going to create a simple series of messaging for errors, warnings and successes using another feature which goes hand in hand with extend, placeholder classes.
 
-SCSS:
+**SCSS:**
 
 ``` 
 .message-shared {
@@ -143,7 +143,7 @@ SCSS:
 }
 ``` 
 
-CSS:
+**CSS:**
 
 ``` 
 .message-shared, .message, .success {
@@ -159,7 +159,7 @@ CSS:
 
 A placeholder class is a special type of class that only prints when it is extended, and can help keep your compiled CSS neat and clean.
 
-SCSS:
+**SCSS:**
 
 ``` 
 %message-shared {
@@ -178,7 +178,7 @@ SCSS:
 }
 ``` 
 
-CSS:
+**CSS:**
 
 ``` 
 .message, .success {
@@ -197,7 +197,7 @@ Sass extends CSS's @import rule with the ability to import Sass and CSS styleshe
 
 The Sass team discourages the continued use of the @import rule. Sass will gradually phase it out over the next few years, and eventually remove it from the language entirely. Prefer the @use rule instead. (Note that only Dart Sass currently supports @use. Users of other implementations must use the @import rule instead.)
 
-SCSS:
+**SCSS:**
 
 ``` 
 // foundation/_code.scss
@@ -222,7 +222,7 @@ ul, ol {
 @import 'foundation/code', 'foundation/lists';
 ``` 
 
-CSS:
+**CSS:**
 
 ``` 
 code {
@@ -245,7 +245,8 @@ You can create partial Sass files that contain little snippets of CSS that you c
 ## Interpolation
 Interpolation can be used almost anywhere in a Sass stylesheet to embed the result of a SassScript expression into a chunk of CSS. Just wrap an expression in #{} in any of the following places:
 
-SCSS:
+**SCSS:**
+
 ``` 
 @mixin corner-icon($name, $top-or-bottom, $left-or-right) {
   .icon-#{$name} {
@@ -259,7 +260,7 @@ SCSS:
 @include corner-icon("mail", top, left);
 ``` 
 
-CSS:
+**CSS:**
 
 ``` 
 .icon-mail {
