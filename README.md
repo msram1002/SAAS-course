@@ -1,6 +1,6 @@
-# SAAS-Course (CSS Preprocessor)
+# SAAS (CSS Preprocessor)
 
-Preprocessing
+## Preprocessing
 CSS on its own can be fun, but stylesheets are getting larger, more complex, and harder to maintain. This is where a preprocessor can help. Sass has features that don't exist in CSS yet like nesting, mixins, inheritance, and other nifty goodies that help you write robust, maintainable CSS.
 
 Once Sass is installed, you can compile your Sass to CSS using the sass command. You'll need to tell Sass which file to build from, and where to output CSS to. You can also watch individual files or directories with the --watch flag. The watch flag tells Sass to watch your source files for changes, and re-compile CSS each time you save your Sass.
@@ -8,7 +8,6 @@ Once Sass is installed, you can compile your Sass to CSS using the sass command.
 ```node-sass -o css scss/main.scss -w```
 
 _Sass has two syntaxes! The SCSS syntax (.scss) is used most commonly. It's a superset of CSS, which means all valid CSS is also valid SCSS. The indented syntax (.sass) is more unusual: it uses indentation rather than curly braces to nest statements, and newlines instead of semicolons to separate them._
-
 
 ## Variables
 Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you'll want to reuse. Sass uses the $ symbol to make something a variable.
@@ -35,7 +34,7 @@ body {
 ``` 
 
 ## Nesting
-When writing HTML you've probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.
+When writing HTML you havve probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn't.
 
 Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML. Be aware that overly nested rules will result in over-qualified CSS that could prove hard to maintain and is generally considered bad practice.
 
