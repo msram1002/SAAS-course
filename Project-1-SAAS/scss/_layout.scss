@@ -6,12 +6,14 @@
   background-size: cover;
 
   .brand {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include centering(15%);
     display: flex;
     align-items: center;
+  }
+
+  &-banner {
+    @include centering(50%);
+    text-align: center;
   }
 }
 
