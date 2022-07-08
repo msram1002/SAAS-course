@@ -74,3 +74,47 @@
     flex-wrap: wrap;
   }
 }
+
+.footer {
+  padding: 5rem 0;
+  @include flexLayout;
+  flex-direction: column;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4.5rem;
+  }
+
+  &-social-media {
+    .social-media {
+      display: flex;
+      width: 300px;
+      justify-content: space-between;
+      margin-bottom: 4.5rem;
+
+      &-item {
+        list-style: none;
+      }
+
+      &-link {
+        text-decoration: none;
+        font-size: 2.5rem;
+        color: $color-secondary;
+        transition: color 0.7s;
+        cursor: pointer;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  &-copyright-para {
+    font-family: $font-josefinSans;
+    font-size: 1.25rem;
+    color: $color-secondary;
+    @include textStyles(capitalize);
+  }
+}
