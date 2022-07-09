@@ -114,18 +114,47 @@
   &-banner {
     @include centering(50%);
     text-align: center;
+    margin-top: 4rem;
+
+    @media (max-width: 992px) {
+      margin-top: 2.75rem;
+    }
+
+    @media (max-width: 576px) {
+      margin-top: 1.25rem;
+    }
   }
 }
 
 .about-us {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
+  margin: 4rem 0;
+
+  @media (max-width: 1300px) {
+    height: 90vh;
+    margin: 6rem 0;
+  }
+
+  @media (max-width: 992px) {
+    height: 80vh;
+    margin: 8rem 0;
+  }
+
+  @media (max-width: 576px) {
+    height: 70vh;
+    margin: 6rem 0;
+  }
 
   &-left {
     width: 40%;
     position: relative;
     // left: -200px;
+
+    @media (max-width: 576px) {
+      display: none;
+    }
 
     img {
       width: 100%;
@@ -140,22 +169,35 @@
     align-items: center;
     padding: 0 100px;
 
+    @media (max-width: 576px) {
+      width: 100%;
+      padding: 0 50px;
+    }
+
     .sub-heading {
       text-align: center;
     }
 
     .stars {
       margin: 2rem 0;
-      
+
+      @media (max-width: 992px) {
+        margin: 1.5rem 0;
+      }
+
       .star {
         color: $color-primary;
         font-size: 1.25rem;
         margin-left: 0.5rem;
+
+        @media (max-width: 992px) {
+          font-size: 0.75rem;
+        }
       }
     }
 
     .description {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-family: $font-josefinSans;
       font-style: italic;
       color: $color-secondary;
@@ -163,6 +205,22 @@
 
       &::first-letter {
         padding-left: 3.5rem;
+      }
+
+      @media (max-width: 1600px) {
+        font-size: 1.25rem;
+      }
+
+      @media (max-width: 992px) {
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 576px) {
+        text-align: center;
+
+        &::first-letter {
+          padding-left: 0;
+        }
       }
     }
   }
@@ -193,6 +251,10 @@
       justify-content: space-between;
       margin-bottom: 4.5rem;
 
+      @media (max-width: 992px) {
+        width: 175px;
+      }
+
       &-item {
         list-style: none;
       }
@@ -203,6 +265,10 @@
         color: $color-secondary;
         transition: color 0.7s;
         cursor: pointer;
+
+        @media (max-width: 992px) {
+          font-size: 1.5rem;
+        }
 
         &:hover {
           color: $color-primary;
@@ -215,6 +281,16 @@
     font-family: $font-josefinSans;
     font-size: 1.25rem;
     color: $color-secondary;
+    text-align: center;
+    margin-bottom: 0.5rem;
     @include textStyles(capitalize);
+    
+    @media (max-width: 992px) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 0.8rem;
+    }
   }
 }

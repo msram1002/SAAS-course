@@ -103,15 +103,38 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center; }
+    text-align: center;
+    margin-top: 4rem; }
+    @media (max-width: 992px) {
+      .header-banner {
+        margin-top: 2.75rem; } }
+    @media (max-width: 576px) {
+      .header-banner {
+        margin-top: 1.25rem; } }
 
 .about-us {
-  height: 90vh;
+  height: 100vh;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  margin: 4rem 0; }
+  @media (max-width: 1300px) {
+    .about-us {
+      height: 90vh;
+      margin: 6rem 0; } }
+  @media (max-width: 992px) {
+    .about-us {
+      height: 80vh;
+      margin: 8rem 0; } }
+  @media (max-width: 576px) {
+    .about-us {
+      height: 70vh;
+      margin: 6rem 0; } }
   .about-us-left {
     width: 40%;
     position: relative; }
+    @media (max-width: 576px) {
+      .about-us-left {
+        display: none; } }
     .about-us-left img {
       width: 100%;
       opacity: 0.7; }
@@ -121,22 +144,43 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 0 100px; }
+    @media (max-width: 576px) {
+      .about-us-right {
+        width: 100%;
+        padding: 0 50px; } }
     .about-us-right .sub-heading {
       text-align: center; }
     .about-us-right .stars {
       margin: 2rem 0; }
+      @media (max-width: 992px) {
+        .about-us-right .stars {
+          margin: 1.5rem 0; } }
       .about-us-right .stars .star {
         color: #d3ab55;
         font-size: 1.25rem;
         margin-left: 0.5rem; }
+        @media (max-width: 992px) {
+          .about-us-right .stars .star {
+            font-size: 0.75rem; } }
     .about-us-right .description {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-family: "Josefin Sans", sans-serif;
       font-style: italic;
       color: #bbb;
       text-align: justify; }
       .about-us-right .description::first-letter {
         padding-left: 3.5rem; }
+      @media (max-width: 1600px) {
+        .about-us-right .description {
+          font-size: 1.25rem; } }
+      @media (max-width: 992px) {
+        .about-us-right .description {
+          font-size: 0.9rem; } }
+      @media (max-width: 576px) {
+        .about-us-right .description {
+          text-align: center; }
+          .about-us-right .description::first-letter {
+            padding-left: 0; } }
 
 .gallery .cards-wrapper {
   display: flex;
@@ -157,6 +201,9 @@ body {
     width: 300px;
     justify-content: space-between;
     margin-bottom: 4.5rem; }
+    @media (max-width: 992px) {
+      .footer-social-media .social-media {
+        width: 175px; } }
     .footer-social-media .social-media-item {
       list-style: none; }
     .footer-social-media .social-media-link {
@@ -165,15 +212,26 @@ body {
       color: #bbb;
       transition: color 0.7s;
       cursor: pointer; }
+      @media (max-width: 992px) {
+        .footer-social-media .social-media-link {
+          font-size: 1.5rem; } }
       .footer-social-media .social-media-link:hover {
         color: #d3ab55; }
   .footer-copyright-para {
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.25rem;
     color: #bbb;
+    text-align: center;
+    margin-bottom: 0.5rem;
     font-weight: 300;
     letter-spacing: 0.25rem;
     text-transform: capitalize; }
+    @media (max-width: 992px) {
+      .footer-copyright-para {
+        font-size: 1rem; } }
+    @media (max-width: 576px) {
+      .footer-copyright-para {
+        font-size: 0.8rem; } }
 
 .hamburger-menu {
   width: 2.5rem;
@@ -182,6 +240,10 @@ body {
   top: 10%;
   right: 5%;
   z-index: 300; }
+  @media (max-width: 992px) {
+    .hamburger-menu {
+      width: 1.75rem;
+      height: 1.75rem; } }
   .hamburger-menu .menu {
     display: flex;
     flex-direction: column;
@@ -190,10 +252,13 @@ body {
     transition: transform 0.5s; }
     .hamburger-menu .menu-line {
       width: 100%;
-      height: 4px;
+      height: 0.25rem;
       background-color: #d3ab55;
       transform-origin: right;
       transition: all 0.3s 0.3s; }
+      @media (max-width: 992px) {
+        .hamburger-menu .menu-line {
+          height: 0.2rem; } }
 
 .logo {
   font-size: 4rem;
@@ -203,9 +268,21 @@ body {
   border: 3px solid #d3ab55;
   border-radius: 50%;
   margin-right: 1.5rem;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 992px) {
+    .logo {
+      font-size: 2.5rem;
+      width: 75px;
+      height: 75px; } }
+  @media (max-width: 576px) {
+    .logo {
+      font-size: 1.75rem;
+      width: 50px;
+      height: 50px;
+      border-width: 2px; } }
 
 .main-name {
   font-family: "Nunito", sans-serif;
@@ -214,6 +291,15 @@ body {
   font-weight: 300;
   letter-spacing: 0.25rem;
   text-transform: uppercase; }
+  @media (max-width: 1300px) {
+    .main-name {
+      font-size: 2.5rem; } }
+  @media (max-width: 992px) {
+    .main-name {
+      font-size: 2rem; } }
+  @media (max-width: 576px) {
+    .main-name {
+      font-size: 1.5rem; } }
 
 .sub-name {
   font-family: "Josefin Sans", sans-serif;
@@ -223,20 +309,54 @@ body {
   font-weight: 300;
   letter-spacing: 0.25rem;
   text-transform: uppercase; }
+  @media (max-width: 1300px) {
+    .sub-name {
+      font-size: 1.25rem; } }
+  @media (max-width: 992px) {
+    .sub-name {
+      font-size: 1rem; } }
+  @media (max-width: 576px) {
+    .sub-name {
+      font-size: 0.75rem; } }
 
 .main-heading {
   font-family: "Dancing Script", cursive;
   font-size: 5.5rem;
   font-weight: 300;
   color: #d3ab55;
-  margin-bottom: 2rem; }
+  margin-bottom: 5rem; }
+  @media (max-width: 1600px) {
+    .main-heading {
+      font-size: 4rem;
+      margin-bottom: 3rem; } }
+  @media (max-width: 1300px) {
+    .main-heading {
+      font-size: 3rem;
+      margin-bottom: 2.25rem; } }
+  @media (max-width: 992px) {
+    .main-heading {
+      font-size: 2.25rem;
+      margin-bottom: 1.75rem; } }
 
 .sub-heading {
   font-family: "Josefin Sans", sans-serif;
   font-size: 2.75rem;
   font-weight: 300;
   color: #bbb;
-  margin-bottom: 5rem; }
+  margin-bottom: 5rem;
+  text-align: center; }
+  @media (max-width: 1600px) {
+    .sub-heading {
+      font-size: 1.75rem;
+      margin-bottom: 3.5rem; } }
+  @media (max-width: 1300px) {
+    .sub-heading {
+      font-size: 1.5rem;
+      margin-bottom: 2rem; } }
+  @media (max-width: 992px) {
+    .sub-heading {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem; } }
 
 .main-btn {
   width: 170px;
@@ -255,6 +375,16 @@ body {
   .main-btn:hover {
     background-color: #d3ab55;
     color: #262626; }
+  @media (max-width: 992px) {
+    .main-btn {
+      width: 135px;
+      height: 30px;
+      font-size: 0.8rem; } }
+  @media (max-width: 576px) {
+    .main-btn {
+      width: 90px;
+      height: 25px;
+      font-size: 0.6rem; } }
 
 .card {
   width: 33.3333%;
@@ -282,6 +412,14 @@ body {
       font-weight: 300;
       letter-spacing: 0.25rem;
       text-transform: capitalize; }
+      @media (max-width: 992px) {
+        .card-overlay-heading {
+          font-size: 2rem; } }
+      @media (max-width: 576px) {
+        .card-overlay-heading {
+          font-size: 1rem;
+          text-align: center;
+          margin-bottom: 1rem; } }
     .card-overlay-para {
       font-family: "Josefin Sans", sans-serif;
       font-size: 2rem;
@@ -289,6 +427,14 @@ body {
       font-weight: 300;
       letter-spacing: 0.25rem;
       text-transform: capitalize; }
+      @media (max-width: 992px) {
+        .card-overlay-para {
+          font-size: 1.25rem;
+          margin-bottom: 1.5rem; } }
+      @media (max-width: 576px) {
+        .card-overlay-para {
+          font-size: 0.75rem;
+          margin-bottom: 1rem; } }
     .card-overlay-btn {
       width: 8rem;
       height: 2rem;
@@ -303,6 +449,11 @@ body {
       border-radius: 1.75rem;
       outline: none;
       cursor: pointer; }
+      @media (max-width: 992px) {
+        .card-overlay-btn {
+          width: 6rem;
+          height: 1.5rem;
+          font-size: 0.6rem; } }
   .card-img {
     object-fit: cover;
     opacity: 0.6; }
