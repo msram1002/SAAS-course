@@ -1,0 +1,190 @@
+// Numbers
+/* 
+Numbers in Sass have two components: the number itself, and its units. For example, in 16px the number is 16 and the unit is px. Numbers can have no units, and they can have complex units.
+*/
+$fontWeightBold: 700;
+$lineHeightMd: 1.5;
+$font-base: 1.25rem; // px, em, %
+
+// Strings
+/*
+Strings are sequences of characters (specifically Unicode code points). Sass supports two kinds of strings whose internal structure is the same but which are rendered differently: quoted strings, like "Helvetica Neue", and unquoted strings (also known as identifiers)
+*/
+
+$roboto-variant: "Mono";
+// $roboto-variant: 'Mono';
+
+$font-italic-style: italic;
+
+// Colors
+/* 
+Sass colors can be written as hex codes (#f2ece4 or #b37399aa), CSS color names (midnightblue, transparent), or the functions rgb(), rgba(), hsl(), and hsla().
+*/
+
+$color-primary: red;
+$main-background-color: #ff0000;
+$main-border-color: rgb(255, 0, 0); // rgba(255, 0, 0, .5)
+$main-outline-color: hsl(0, 100%, 50%);
+
+// Lists
+/*
+Lists contain a sequence of other values. In Sass, elements in lists can be separated by commas (Helvetica, Arial, sans-serif), spaces (10px 15px 0 0), or slashes as long as it’s consistent within the list.
+*/
+
+$sizes: 40px, 50px, 80px;
+
+/* 
+The @each rule makes it easy to emit styles or evaluate code for each element of a list or each pair in a map.
+
+The @each rule is typically used to iterate over items in a list or map collection.
+*/
+@each $size in $sizes {
+  .icon-#{$size} {
+    font-size: $size;
+    height: $size * 2;
+    width: $size * 5;
+  }
+}
+
+// Maps
+/* 
+Maps in Sass hold pairs of keys and values, and make it easy to look up a value by its corresponding key. The expression before the : is the key, and the expression after is the value associated with that key. The keys must be unique, but the values may be duplicated.
+
+Unlike lists, maps must be written with parentheses around them
+*/
+
+$colors: (
+  "choice1": red,
+  2: green,
+  tertiary: blue,
+);
+
+h1 {
+  color: map-get($colors, tertiary);
+  background-color: map-get($colors, 2);
+  border: 2px solid map-get($colors, "choice1");
+  font-family: "Roboto #{$roboto-variant}";
+  font-style: $font-italic-style;
+}
+
+// Null
+/* 
+The value null is the only value of its type. It represents the absence of a value, and is often returned by functions to indicate the lack of a result.
+*/
+
+$fonts: (
+  "serif": "Helvetica Neue",
+  "monospace": "Consolas",
+);
+
+h3 {
+  font: 18px bold map-get($fonts, "sans");
+}
+
+// Booleans
+/* 
+Booleans are the logical values true and false.
+*/
+
+// For
+/*
+@for - This loop iterates through a section of code for a set number of times.
+
+We can use to keyword in the loop if we want to exclude the last iteration.
+*/
+
+@for $i from 1 through 5 {
+  .paragraph-#{$i} {
+    letter-spacing: 0.5rem * $i;
+    background-color: map-get($colors, $i);
+  }
+}
+
+// While
+/* 
+The while loop includes a conditional block. If the evaluation proves true it will continue looping through a section of code until the condition proves false.
+*/
+
+$font-size: 1;
+
+@while $font-size <= 5 {
+  .font-size-#{$font-size} {
+    font-size: #{$font-size}rem;
+    line-height: #{$font-size + 2}rem;
+  }
+
+  // Increment the counter
+  $font-size: $font-size + 1;
+}
+
+/*
+Before the loop ends, we increment the $font-size counter to advance the loop.
+
+If we don’t increment the counter, the condition will always stay true and the loop will continue running until Node crashes.
+*/
+
+p {
+  @if 6 + 6 == 12 {
+    border: 2px solid;
+  }
+  @if 4 < 2 {
+    border: 1px dotted;
+  }
+  @if null {
+    border: 2px double;
+  }
+}
+
+// If
+/*
+An if statement will evaluate a condition. If the condition proves true, the compiler will execute the if statement’s code block.
+*/
+
+/*
+  When checking for true or false values, we don’t need to specify our equality operator == or the keywords true or false .
+  */
+
+@mixin avatar($size, $circle: false) {
+  width: $size;
+  height: $size;
+  background: blue;
+  margin-bottom: 1rem;
+
+  @if $circle {
+    border-radius: $size / 2;
+  } @else {
+    border-radius: $size / 20;
+  }
+}
+
+/*
+The else statement cannot stand on its own either. It must be preceded by an if statement or an else if ladder. 
+*/
+
+@mixin bordered($direction: null) {
+  @if $direction == top {
+    border-top: 0.5rem solid #000;
+  } @else if $direction == right {
+    border-right: 0.5rem solid #000;
+  } @else if $direction == bottom {
+    border-bottom: 0.5rem solid #000;
+  } @else if $direction == left {
+    border-left: 0.5rem solid #000;
+  } @else {
+    border: 0.5rem solid #000;
+  }
+}
+
+.square-av {
+  @include avatar(100px, false);
+  @include bordered(left);
+}
+.circle-av {
+  @include avatar(100px, true);
+  @include bordered();
+}
+
+// To Remember - True and False
+/*
+Sass true and false values are not the same as those in traditional programming languages. In Sass, a false value can only be false or null . Any other value, like empty strings, lists and the number 0, is considered to be a true value.
+*/

@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* 
+Numbers in Sass have two components: the number itself, and its units. For example, in 16px the number is 16 and the unit is px. Numbers can have no units, and they can have complex units.
+*/
+/*
+Strings are sequences of characters (specifically Unicode code points). Sass supports two kinds of strings whose internal structure is the same but which are rendered differently: quoted strings, like "Helvetica Neue", and unquoted strings (also known as identifiers)
+*/
+/* 
+Sass colors can be written as hex codes (#f2ece4 or #b37399aa), CSS color names (midnightblue, transparent), or the functions rgb(), rgba(), hsl(), and hsla().
+*/
+/*
+Lists contain a sequence of other values. In Sass, elements in lists can be separated by commas (Helvetica, Arial, sans-serif), spaces (10px 15px 0 0), or slashes as long as it’s consistent within the list.
+*/
+/* 
+The @each rule makes it easy to emit styles or evaluate code for each element of a list or each pair in a map.
+
+The @each rule is typically used to iterate over items in a list or map collection.
+*/
+.icon-40px {
+  font-size: 40px;
+  height: 80px;
+  width: 200px; }
+
+.icon-50px {
+  font-size: 50px;
+  height: 100px;
+  width: 250px; }
+
+.icon-80px {
+  font-size: 80px;
+  height: 160px;
+  width: 400px; }
+
+/* 
+Maps in Sass hold pairs of keys and values, and make it easy to look up a value by its corresponding key. The expression before the : is the key, and the expression after is the value associated with that key. The keys must be unique, but the values may be duplicated.
+
+Unlike lists, maps must be written with parentheses around them
+*/
+h1 {
+  color: blue;
+  background-color: green;
+  border: 2px solid red;
+  font-family: "Roboto Mono";
+  font-style: italic; }
+
+/* 
+The value null is the only value of its type. It represents the absence of a value, and is often returned by functions to indicate the lack of a result.
+*/
+h3 {
+  font: 18px bold; }
+
+/* 
+Booleans are the logical values true and false.
+*/
+/*
+@for - This loop iterates through a section of code for a set number of times.
+
+We can use to keyword in the loop if we want to exclude the last iteration.
+*/
+.paragraph-1 {
+  letter-spacing: 0.5rem; }
+
+.paragraph-2 {
+  letter-spacing: 1rem;
+  background-color: green; }
+
+.paragraph-3 {
+  letter-spacing: 1.5rem; }
+
+.paragraph-4 {
+  letter-spacing: 2rem; }
+
+.paragraph-5 {
+  letter-spacing: 2.5rem; }
+
+/* 
+The while loop includes a conditional block. If the evaluation proves true it will continue looping through a section of code until the condition proves false.
+*/
+.font-size-1 {
+  font-size: 1rem;
+  line-height: 3rem; }
+
+.font-size-2 {
+  font-size: 2rem;
+  line-height: 4rem; }
+
+.font-size-3 {
+  font-size: 3rem;
+  line-height: 5rem; }
+
+.font-size-4 {
+  font-size: 4rem;
+  line-height: 6rem; }
+
+.font-size-5 {
+  font-size: 5rem;
+  line-height: 7rem; }
+
+/*
+Before the loop ends, we increment the $font-size counter to advance the loop.
+
+If we don’t increment the counter, the condition will always stay true and the loop will continue running until Node crashes.
+*/
+p {
+  border: 2px solid; }
+
+/*
+An if statement will evaluate a condition. If the condition proves true, the compiler will execute the if statement’s code block.
+*/
+/*
+  When checking for true or false values, we don’t need to specify our equality operator == or the keywords true or false .
+  */
+/*
+The else statement cannot stand on its own either. It must be preceded by an if statement or an else if ladder. 
+*/
+.square-av {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border-left: 0.5rem solid #000; }
+
+.circle-av {
+  width: 100px;
+  height: 100px;
+  background: blue;
+  margin-bottom: 1rem;
+  border-radius: 50px;
+  border: 0.5rem solid #000; }
+
+/*
+Sass true and false values are not the same as those in traditional programming languages. In Sass, a false value can only be false or null . Any other value, like empty strings, lists and the number 0, is considered to be a true value.
+*/
