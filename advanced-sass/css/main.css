@@ -9,11 +9,10 @@ Strings are sequences of characters (specifically Unicode code points). Sass sup
 Sass colors can be written as hex codes (#f2ece4 or #b37399aa), CSS color names (midnightblue, transparent), or the functions rgb(), rgba(), hsl(), and hsla().
 */
 /*
-Lists contain a sequence of other values. In Sass, elements in lists can be separated by commas (Helvetica, Arial, sans-serif), spaces (10px 15px 0 0), or slashes as long as it’s consistent within the list.
+Lists contain a sequence of other values. In Sass, elements in lists can be separated by commas (Helvetica, Arial, sans-serif), spaces (10px 15px 0 0), or slashes as long as it's consistent within the list.
 */
 /* 
 The @each rule makes it easy to emit styles or evaluate code for each element of a list or each pair in a map.
-
 The @each rule is typically used to iterate over items in a list or map collection.
 */
 .icon-40px {
@@ -53,9 +52,7 @@ h3 {
 Booleans are the logical values true and false.
 */
 /*
-@for - This loop iterates through a section of code for a set number of times.
-
-We can use to keyword in the loop if we want to exclude the last iteration.
+@for - This loop iterates through a section of code for a set number of times. We can use to keyword in the loop if we want to exclude the last iteration.
 */
 .paragraph-1 {
   letter-spacing: 0.5rem; }
@@ -106,12 +103,8 @@ p {
 
 /*
 An if statement will evaluate a condition. If the condition proves true, the compiler will execute the if statement’s code block.
-*/
-/*
-  When checking for true or false values, we don’t need to specify our equality operator == or the keywords true or false .
-  */
-/*
-The else statement cannot stand on its own either. It must be preceded by an if statement or an else if ladder. 
+
+When checking for true or false values, we don’t need to specify our equality operator == or the keywords true or false.
 */
 .square-av {
   width: 100px;

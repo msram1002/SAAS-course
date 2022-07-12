@@ -28,14 +28,13 @@ $main-outline-color: hsl(0, 100%, 50%);
 
 // Lists
 /*
-Lists contain a sequence of other values. In Sass, elements in lists can be separated by commas (Helvetica, Arial, sans-serif), spaces (10px 15px 0 0), or slashes as long as it’s consistent within the list.
+Lists contain a sequence of other values. In Sass, elements in lists can be separated by commas (Helvetica, Arial, sans-serif), spaces (10px 15px 0 0), or slashes as long as it's consistent within the list.
 */
 
 $sizes: 40px, 50px, 80px;
 
 /* 
 The @each rule makes it easy to emit styles or evaluate code for each element of a list or each pair in a map.
-
 The @each rule is typically used to iterate over items in a list or map collection.
 */
 @each $size in $sizes {
@@ -88,9 +87,7 @@ Booleans are the logical values true and false.
 
 // For
 /*
-@for - This loop iterates through a section of code for a set number of times.
-
-We can use to keyword in the loop if we want to exclude the last iteration.
+@for - This loop iterates through a section of code for a set number of times. We can use to keyword in the loop if we want to exclude the last iteration.
 */
 
 @for $i from 1 through 5 {
@@ -138,11 +135,9 @@ p {
 // If
 /*
 An if statement will evaluate a condition. If the condition proves true, the compiler will execute the if statement’s code block.
-*/
 
-/*
-  When checking for true or false values, we don’t need to specify our equality operator == or the keywords true or false .
-  */
+When checking for true or false values, we don’t need to specify our equality operator == or the keywords true or false.
+*/
 
 @mixin avatar($size, $circle: false) {
   width: $size;
@@ -157,9 +152,7 @@ An if statement will evaluate a condition. If the condition proves true, the com
   }
 }
 
-/*
-The else statement cannot stand on its own either. It must be preceded by an if statement or an else if ladder. 
-*/
+// The else statement cannot stand on its own either. It must be preceded by an if statement or an else if ladder.
 
 @mixin bordered($direction: null) {
   @if $direction == top {
