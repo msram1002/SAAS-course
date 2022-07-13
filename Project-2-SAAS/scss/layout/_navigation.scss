@@ -7,5 +7,6 @@
 .secondary-nav {
   grid-column: 3 / 8;
   grid-row: 3 / 4;
+  margin-top: 1.5rem;
   @include navigation;
 }

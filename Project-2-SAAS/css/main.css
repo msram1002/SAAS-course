@@ -41,7 +41,8 @@ html {
 
 .secondary-nav {
   grid-column: 3 / 8;
-  grid-row: 3 / 4; }
+  grid-row: 3 / 4;
+  margin-top: 1.5rem; }
   .secondary-nav-list {
     display: flex;
     justify-content: space-around;
@@ -74,3 +75,52 @@ html {
     font-size: 6rem;
     font-weight: lighter;
     letter-spacing: 0.5rem; }
+
+.dropdown-li {
+  position: relative; }
+  .dropdown-li::after {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f078';
+    font-weight: bold; }
+  .dropdown-li:hover .dropdown {
+    visibility: visible;
+    opacity: 1; }
+
+.dropdown {
+  position: absolute;
+  top: 3rem;
+  width: 10rem;
+  background-color: #e6e2e4;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s; }
+  .dropdown-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%; }
+  .dropdown-item {
+    list-style: none; }
+  .dropdown-link {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.75rem;
+    transition: all 0.4s; }
+    .dropdown-link:hover {
+      color: #999999; }
+  .dropdown::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1rem;
+    left: 7rem;
+    border-right: 16px solid transparent;
+    border-bottom: 16px solid #e6e2e4;
+    border-left: 16px solid transparent; }
+  .dropdown-item {
+    margin: 0.5rem 0; }
+  .dropdown-link {
+    font-weight: 400;
+    font-size: 1.5rem; }
