@@ -124,6 +124,61 @@ html {
 .slideshow-slide:nth-child(5) {
   animation-delay: 16s; }
 
+.products {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4; }
+  .products-heading {
+    margin: 5rem 0; }
+    .products-heading-text {
+      text-align: center;
+      font-size: 4.5rem;
+      font-weight: 300;
+      color: #333; }
+  .products-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .products-wrapper .product {
+      position: relative;
+      cursor: pointer; }
+      .products-wrapper .product:hover .product-desc {
+        opacity: 1;
+        visibility: visible; }
+      .products-wrapper .product:hover .product-img {
+        opacity: 0.5; }
+      .products-wrapper .product-img {
+        width: 100%;
+        transition: all 0.8s 0.4s; }
+      .products-wrapper .product-desc {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 238, 0.6);
+        padding: 2rem;
+        border: 0.1rem solid #333;
+        border-radius: 0.5rem;
+        color: #333;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.8s 0.4s; }
+        .products-wrapper .product-desc-heading {
+          font-size: 3rem; }
+        .products-wrapper .product-desc-price {
+          font-size: 2rem;
+          font-weight: 400;
+          margin: 1rem 0; }
+          .products-wrapper .product-desc-price span {
+            font-weight: 600; }
+        .products-wrapper .product-desc-btn {
+          font-size: 1.5rem;
+          text-decoration: none;
+          color: #f5b149;
+          display: block;
+          padding: .5rem 1rem;
+          border: 0.1rem solid #f5b149;
+          background-color: #383838; }
+
 .logo {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
