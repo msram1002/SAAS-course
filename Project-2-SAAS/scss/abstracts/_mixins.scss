@@ -1,5 +1,4 @@
 // common mixin for two navs
-
 @mixin navigation {
   &-list {
     display: flex;
@@ -24,10 +23,10 @@
   }
 }
 
-@mixin flexPosition($justifyContent: center, $alignCenter: center) {
+@mixin flexPosition($justifyContent: center, $alignItems: center) {
   display: flex;
   justify-content: $justifyContent;
-  align-items: $alignCenter;
+  align-items: $alignItems;
 }
 
 @mixin footerList {
@@ -45,10 +44,37 @@
     font-size: size(xs);
     text-decoration: none;
     color: lighten(color(primary), 15%);
-    transition: color 0.3s ;
+    transition: color 0.3s;
 
     &:hover {
       color: lighten(color(primary), 35%);
+    }
+  }
+}
+
+// Responsiveness
+@mixin responsive($breakpoint) {
+  @if ($breakpoint == xl) {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == lg) {
+    @media (max-width: 1000px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == md) {
+    @media (max-width: 760px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == sm) {
+    @media (max-width: 560px) {
+      @content;
     }
   }
 }

@@ -41,12 +41,22 @@
         transform: translate(-50%, -50%);
         background-color: transparentize(color(secondary), 0.4);
         padding: 2rem;
-        border: .1rem solid color(primary);
+        border: 0.1rem solid color(primary);
         border-radius: 0.5rem;
         color: color(primary);
         opacity: 0;
         visibility: hidden;
         transition: all 0.8s 0.4s;
+
+        @include responsive(lg) {
+          padding: 1rem;
+        }
+
+        @include responsive(sm) {
+          background-color: transparent;
+          border: none;
+        }
+
         &-heading {
           font-size: size(xl);
         }
@@ -59,6 +69,14 @@
           span {
             font-weight: 600;
           }
+
+          @include responsive(lg) {
+            font-size: size(sm);
+          }
+
+          @include responsive(sm) {
+            display: none;
+          }
         }
 
         &-btn {
@@ -66,9 +84,18 @@
           text-decoration: none;
           color: color(quaternary);
           display: block;
-          padding: .5rem 1rem;
+          padding: 0.5rem 1rem;
           border: 0.1rem solid color(quaternary);
           background-color: lighten(color(primary), 2);
+
+          @include responsive(lg) {
+            padding: 0.2rem 0.5rem;
+          }
+
+          @include responsive(sm) {
+            padding: 0.5rem 0.7rem;
+            width: 7rem;
+          }
         }
       }
     }

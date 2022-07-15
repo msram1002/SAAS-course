@@ -7,6 +7,14 @@
 // Set 1rem = 10px
 html {
   font-size: 62.5%;
+
+  @include responsive(md) {
+    font-size: 56.25%;
+  }
+
+  @include responsive(sm) {
+    font-size: 50%;
+  }
 }
 
 .container {

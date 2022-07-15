@@ -4,6 +4,10 @@
   @include flexPosition(space-around);
   padding: 5rem 0;
   border-top: 0.1rem solid color(primary);
+
+  @include responsive(lg) {
+    flex-wrap: wrap;
+  }
 }
 
 .footer-nav {
@@ -14,21 +18,42 @@
   @include footerList;
 }
 
+.title {
+  font-family: "Great Vibes", cursive;
+  font-weight: lighter;
+  letter-spacing: 0.5rem;
+}
+
 .contact {
+  @include responsive(lg) {
+    padding: 0 10rem;
+    order: 1;
+    margin-top: 4rem;
+  }
+
   &-heading {
     font-size: size(xl);
     color: color(primary);
     text-align: center;
+
+    @include responsive(md) {
+      font-size: size(lg);
+    }
   }
 
   &-para {
     font-size: size(lg);
     margin: 1rem 0;
     text-align: center;
+
+    @include responsive(md) {
+      font-size: size(md);
+    }
   }
 
   .input-group {
     display: flex;
+    justify-content: center;
 
     input {
       padding: 1rem;
@@ -39,7 +64,7 @@
       outline: none;
       transition: border 0.5s;
 
-      &:focus:not([type='submit']) {
+      &:focus:not([type="submit"]) {
         border: 0.1rem solid darken(color(quaternary), 10%);
       }
     }
@@ -85,6 +110,10 @@
 
       i {
         font-size: size(md);
+
+        @include responsive(sm) {
+          font-size: size(sm);
+        }
       }
     }
   }

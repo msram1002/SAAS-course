@@ -2,8 +2,8 @@
   position: relative;
 
   &::after {
-    font-family: 'Font Awesome 5 Free';
-    content: '\f078';
+    font-family: "Font Awesome 5 Free";
+    content: "\f078";
     font-weight: bold;
   }
 
@@ -26,7 +26,7 @@
   transition: opacity 0.3s;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: -1rem;
@@ -35,7 +35,7 @@
     border-bottom: 16px solid darken(color(tertiary), 5%);
     border-left: 16px solid transparent;
   }
-  
+
   &-item {
     margin: 0.5rem 0;
   }

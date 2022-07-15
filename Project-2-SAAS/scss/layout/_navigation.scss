@@ -2,6 +2,22 @@
   grid-column: 7 / 10;
   grid-row: 1 / 2;
   @include navigation;
+
+  @include responsive(xl) {
+    grid-column: 6 / 10;
+  }
+
+  @include responsive(lg) {
+    grid-column: 5 / 10;
+  }
+
+  @include responsive(md) {
+    grid-column: 4 / 10;
+  }
+
+  @include responsive(sm) {
+    grid-column: 2 / 10;
+  }
 }
 
 .secondary-nav {
@@ -9,4 +25,12 @@
   grid-row: 3 / 4;
   margin-top: 1.5rem;
   @include navigation;
+
+  @include responsive(lg) {
+    grid-column: 2 / 9;
+  }
+
+  @include responsive(md) {
+    grid-column: 1 / -1;
+  }
 }
